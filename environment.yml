@@ -3,5 +3,9 @@ name: base
 channels:
   - defaults
 dependencies:
+  - pydantic
+  - python-dotenv
   - transformers
+  - pip
+    - accelerate
 prefix: /opt/conda

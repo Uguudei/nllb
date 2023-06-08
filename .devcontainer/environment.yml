@@ -4,6 +4,7 @@ channels:
   - defaults
 dependencies:
   - ipykernel
+  - ipywidgets
   - pip
   - pip:
     - pep8-naming

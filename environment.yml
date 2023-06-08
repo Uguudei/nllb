@@ -2,10 +2,14 @@
 name: base
 channels:
   - defaults
+  # - conda-forge
 dependencies:
   - pydantic
   - python-dotenv
   - transformers
-  - pip
+  # - datasets
+  - pip:
     - accelerate
+    - librosa
+    - soundfile
 prefix: /opt/conda

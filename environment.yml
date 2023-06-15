@@ -6,9 +6,9 @@ channels:
 dependencies:
   - pydantic
   - python-dotenv
-  - transformers
-  # - datasets
   - pip:
+    - transformers
+    - datasets
     - accelerate
     - librosa
     - soundfile

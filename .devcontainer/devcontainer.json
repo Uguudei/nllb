@@ -13,12 +13,13 @@
 		"dockerfile": "Dockerfile"
 	},
 	"features": {
-		"ghcr.io/devcontainers/features/common-utils:1": {},
+		"ghcr.io/devcontainers/features/common-utils:2": {},
 		"ghcr.io/devcontainers/features/python:1": {}
 	},
 	// Mount /data if you need to save and load big training data. Create a project-specific directory in /data.
-	"mounts": ["source=/data,target=/data,type=bind"
-],
+	"mounts": [
+		"source=/data,target=/data,type=bind"
+	],
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -28,26 +29,18 @@
 			"settings": {
 				"python.defaultInterpreterPath": "/opt/conda/bin/python",
 				"python.languageServer": "Pylance",
-				"python.linting.enabled": true,
-                "python.linting.pylintEnabled": false,
-				"python.linting.flake8Enabled": true,
-				"python.formatting.provider": "black",
-				"python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
-				"python.formatting.blackPath": "/usr/local/py-utils/bin/black",
-				"python.formatting.yapfPath": "/usr/local/py-utils/bin/yapf",
-				"python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
-				"python.linting.flake8Path": "/usr/local/py-utils/bin/flake8",
-				"python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
-				"python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
-				"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
-				"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
+				"[python]": {
+					"editor.defaultFormatter": "ms-python.black-formatter"
+				},
+				"notebook.formatOnSave.enabled": true,
 				"editor.formatOnSave": true,
 				"editor.codeActionsOnSave": {
 					"source.organizeImports": true
 				},
 				"files.autoSave": "afterDelay",
 				"files.trimTrailingWhitespace": true,
-                "files.trimFinalNewlines": true,
+				"files.trimFinalNewlines": true,
+				"files.insertFinalNewline": true,
 				"files.exclude": {
 					"**/__pycache__": true,
 					"**/*.~sql": true,
@@ -61,9 +54,18 @@
 			"extensions": [
 				"ms-python.python",
 				"ms-python.vscode-pylance",
-				"davidanson.vscode-markdownlint",
+				"ms-python.black-formatter",
+				"charliermarsh.ruff",
+				"ms-toolsai.jupyter",
 				"visualstudioexptteam.vscodeintellicode",
-				"ms-toolsai.jupyter"
+				"ms-azuretools.vscode-docker",
+				"tamasfe.even-better-toml",
+				"redhat.vscode-yaml",
+				"davidanson.vscode-markdownlint",
+				"bierner.markdown-checkbox",
+				"bierner.markdown-emoji",
+				"bierner.markdown-mermaid",
+				"bierner.markdown-footnotes"
 			]
 		}
 	},
